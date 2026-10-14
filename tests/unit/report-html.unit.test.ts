@@ -137,6 +137,36 @@ test("[OUT-07] the CSP meta tag is present with no script source", async () => {
   assert.equal(/<link\b[^>]*stylesheet/i.test(out), false, "no external stylesheet");
 });
 
+/** A CSP value as directive name -> source list. */
+function cspDirectives(csp: string): Map<string, string[]> {
+  const out = new Map<string, string[]>();
+  for (const part of csp.split(";")) {
+    const [name, ...sources] = part.trim().split(/\s+/);
+    if (name) out.set(name, sources);
+  }
+  return out;
+}
+
+test("[OUT-07] [CS-6] the report head declares an inline icon that the CSP allows, so a browser never asks the server for /favicon.ico", async () => {
+  // A full Chromium requests /favicon.ico on its own when the page names no icon; a static server answers 404 and the
+  // console shows an error (CI failed on this). A data: icon needs `data:` in img-src, which is checked from the page itself.
+  for (const [label, out] of [["findings", renderReport(await storefront())], ["no findings", renderReport(emptyResult())]] as const) {
+    const els = elements(parse(out));
+    const head = els.find((e) => e.tagName === "head");
+    assert.ok(head, `${label}: the page has a head`);
+    const icons = els.filter((e) => e.tagName === "link" && (attr(e, "rel") ?? "").toLowerCase().split(/\s+/).includes("icon"));
+    assert.equal(icons.length, 1, `${label}: exactly one rel="icon" link`);
+    assert.ok(head.childNodes.includes(icons[0]!), `${label}: the icon link is in the head`);
+    const href = attr(icons[0]!, "href") ?? "";
+    assert.match(href, /^data:/, `${label}: the icon is inline, not a request to the server`);
+    assert.equal(out.includes("favicon.ico"), false, `${label}: nothing names /favicon.ico`);
+    const meta = els.find((e) => e.tagName === "meta" && attr(e, "http-equiv") === "Content-Security-Policy");
+    const directives = cspDirectives(attr(meta!, "content") ?? "");
+    const imgSources = directives.get("img-src") ?? directives.get("default-src") ?? [];
+    assert.ok(imgSources.includes("data:"), `${label}: img-src (or default-src) allows data:, got ${imgSources.join(" ")}`);
+  }
+});
+
 test("[OUT-01] every <pre> has tabindex=\"0\" and an aria-label, every <img> has alt, there are no absolute paths, and a key in the input is redacted", async () => {
   const result = structuredClone(await storefront());
   const key = "sk-or-v1-" + "a".repeat(40);

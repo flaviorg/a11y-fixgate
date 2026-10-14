@@ -165,3 +165,20 @@ The same table was first confirmed on 2026-10-12 in a scratch install; nothing d
 - **GIF assembly.** `ffmpeg -framerate 6 -i frame-%04d.png -vf "split[a][b];[a]palettegen[p];[b][p]paletteuse"` turns 80 frames of 1,516 by 777 pixels into a 140 KB GIF.
 - **A `-- --browser` run takes about 3 s here** (15 audits with the headless shell), against about 0.1 s for the recorded replay of the same 15 audits; spec 10.2's 24.9 s was illustrative.
 - **`git`** inside agent shells fails because of a shell wrapper function; `npm run setup:hooks` runs `git` from `sh` and works, and `command git` is used from the shell.
+
+## First CI run findings (2026-10-14, Chrome for Testing 155.0.8059.39 full build against the headless shell)
+
+- **`/favicon.ico` is requested by the full Chromium, not by the headless shell.** CI runs Playwright's pinned full
+  Chromium (`npm run browser:install`, `chromium.executablePath()`); the Puppeteer headless shell used locally never
+  asks for an icon. On a static server without one, the full build gets a 404 and logs `Failed to load resource: the
+  server responded with a status of 404 (Not Found)` as a console error, which failed `report-self-audit.e2e`
+  ([OUT-01] and [RF-1]) on the first run only. The server log shows `GET /favicon.ico -> 404`.
+- **Playwright reports it only through the console.** There is no `response` or `requestfailed` event for the
+  browser's own icon request; the URL is in `message.location().url`. `tests/helpers/page-problems.ts` therefore puts
+  that URL in the problem text, next to the status and URL of any response of 400 or more and of any failed request.
+- **The fix is in the report, not in the test.** `<link rel="icon" href="data:,">` in the head stops the request in the
+  full build, and the report's CSP already allows it (`img-src 'self' data:`; without `data:` the browser logs a CSP
+  violation for the icon instead). `report-html.unit` checks the icon and the CSP from the parsed page.
+- **Audits of other pages are not affected.** The runner reads no console output or response status, the snapshot has
+  no field for either, and a recording key is `sha256(treeSha256 + watch keys)`, so a missing favicon on an audited
+  site changes nothing recorded (`npm run fixtures:record -- --check` still prints no `missing` line).

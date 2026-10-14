@@ -19,6 +19,8 @@ import { redactText } from "../infra/redact.ts";
 import { html, raw } from "./escape.ts";
 import type { Raw } from "./escape.ts";
 
+// img-src allows data: for the inline icon declared in the head (<link rel="icon" href="data:,">). Without an icon, a full
+// Chromium asks the server for /favicon.ico by itself; a static server answers 404 and the console shows an error.
 const CSP = "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'";
 
 const CSS = `
@@ -371,6 +373,7 @@ ${standardsNote()}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ${raw(`<meta http-equiv="Content-Security-Policy" content="${CSP}">`)}
+<link rel="icon" href="data:,">
 <title>${TOOL.name} report: ${result.baseline.pagePath}</title>
 <style>${raw(CSS)}</style>
 </head>

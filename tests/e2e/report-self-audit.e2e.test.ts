@@ -15,6 +15,7 @@ import { createFakeProvider } from "../../src/llm/fake-provider.ts";
 import { writeOutputs } from "../../src/output/write-outputs.ts";
 import { browserPathOrSkip } from "../helpers/browser.ts";
 import { FIXTURE_ROOT, runAuditOnFixtureCopy } from "../helpers/fixtures.ts";
+import { collectPageProblems } from "../helpers/page-problems.ts";
 import { emptyResult } from "../helpers/results.ts";
 import { serveCopy } from "../helpers/serve.ts";
 import { tmpDir } from "../helpers/tmp.ts";
@@ -31,11 +32,8 @@ async function auditReport(exe: string, outDir: string) {
     // Load the report once more in a plain page to read the images and any CSP violation (the tool's own context blocks nothing here).
     const context = await browser.newContext();
     const page = await context.newPage();
-    const problems: string[] = [];
-    page.on("console", (m) => {
-      if (m.type() === "error" || m.type() === "warning") problems.push(`${m.type()}: ${m.text()}`);
-    });
-    page.on("pageerror", (e) => problems.push(`pageerror: ${e.message}`));
+    // Console errors and warnings, page errors, HTTP errors and failed requests, each naming its URL (a full Chromium also asks for /favicon.ico).
+    const problems = collectPageProblems(page);
     await page.goto(served.url + "/report.html", { waitUntil: "load" });
     const images = await page.evaluate(() => [...document.images].map((i) => ({ src: i.getAttribute("src"), alt: i.alt, naturalWidth: i.naturalWidth })));
     const scripts = await page.evaluate(() => document.querySelectorAll("script").length);

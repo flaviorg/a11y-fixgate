@@ -1,0 +1,21 @@
+a11y-fixgate
+Copyright (c) 2026 Flavio Gouveia. Licensed under the MIT License (see LICENSE).
+
+This project depends on the packages below. None of them is copied into this
+repository or modified; they are installed by npm and used as published.
+
+axe-core 4.14.0 (Deque Systems, Inc.) - MPL-2.0
+  Used unmodified. The tool does not bundle or edit its source: at run time it
+  reads axe.source from the installed package (node_modules/axe-core) and
+  injects it into the audited page with page.evaluate. The Mozilla Public
+  License 2.0 applies to axe-core's own files; it does not extend to this
+  project's code. The source of axe-core is available from
+  https://github.com/dequelabs/axe-core and from the installed package.
+
+playwright-core 1.64.0 (Microsoft Corporation) - Apache-2.0
+parse5 8.0.1 (Ivan Nikulin) - MIT
+diff 9.0.0 (Kevin Decker and contributors) - BSD-3-Clause
+zod 4.6.5 (Colin McDonnell) - MIT
+
+Development only (not distributed): typescript 7.0.2 (Apache-2.0) and
+@types/node 26.6.4 (MIT).

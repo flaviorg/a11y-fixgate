@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Focus log page</title>
+</head>
+<body>
+<main>
+  <h1>Focus log page</h1>
+  <button id="one">One</button>
+  <button id="two">Two</button>
+  <div id="log" role="button" tabindex="0" data-log="" data-focus-events="0">Log</div>
+</main>
+<script>
+  // data-log records what was focused when the page finished loading; data-focus-events counts focus and
+  // blur events. Three Tabs into three elements and one Tab out give 3 focus and 3 blur events; a script
+  // focus() or blur() from the audit would add more.
+  const log = document.getElementById("log");
+  let events = 0;
+  const count = () => log.setAttribute("data-focus-events", String(++events));
+  document.addEventListener("focus", count, true);
+  document.addEventListener("blur", count, true);
+  window.addEventListener("load", () => {
+    log.setAttribute("data-log", "load:" + document.activeElement.tagName);
+  });
+</script>
+</body>
+</html>

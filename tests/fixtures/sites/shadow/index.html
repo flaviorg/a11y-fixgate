@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shadow root page</title>
+</head>
+<body>
+<main>
+  <h1>Shadow root page</h1>
+  <div id="host"></div>
+  <button>Visible name</button>
+</main>
+<script>
+  document.getElementById("host").attachShadow({ mode: "open" }).innerHTML = "<button></button>";
+</script>
+</body>
+</html>

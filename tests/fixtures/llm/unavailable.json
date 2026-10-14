@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "scenario": "unavailable",
+  "promptHashes": {
+    "alt-text.v1": "sha256:d70e5e3e5040b6c56c0bb63cafca26bc20633bbd16a8c09ba2884797cc7861e2",
+    "control-name.v1": "sha256:0b38c658a3c3a34070d06d1bfd2279b672a14dadb1c1bc4a3884684577562f1d"
+  },
+  "responses": [
+    {
+      "key": "3f6eb6450eb700a1e667a3e07aec9763d6b6b32a667aa6912bbf52950ec93fbb",
+      "task": "alt-text",
+      "label": "hero image: attempt 1 times out",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/hero.png",
+        "surroundingText": "Orbit Outfitters",
+        "insideControl": false,
+        "image": {
+          "bytes": 611,
+          "mime": "image/png",
+          "sha256": "fb80fe40d248e5eabc4f6a677e0648d8c572f80432578a2164cf502c568c0965"
+        }
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "3f6eb6450eb700a1e667a3e07aec9763d6b6b32a667aa6912bbf52950ec93fbb",
+      "task": "alt-text",
+      "label": "hero image: attempt 2 gets a server error",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/hero.png",
+        "surroundingText": "Orbit Outfitters",
+        "insideControl": false,
+        "image": {
+          "bytes": 611,
+          "mime": "image/png",
+          "sha256": "fb80fe40d248e5eabc4f6a677e0648d8c572f80432578a2164cf502c568c0965"
+        }
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "7f96cbf5c932cf939035fa48ce2aba0fcfb83e580f7935e3d2d0c84b3a9471d0",
+      "task": "alt-text",
+      "label": "jacket image in card 1: attempt 1 times out",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/jacket.png",
+        "surroundingText": "Trail jacket $129 Add to cart",
+        "insideControl": false,
+        "image": {
+          "bytes": 520,
+          "mime": "image/png",
+          "sha256": "4daaa2800fa68f5b512fb0b39c74e510689c2c03560264f6e72a458dfa22fa2d"
+        }
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "7f96cbf5c932cf939035fa48ce2aba0fcfb83e580f7935e3d2d0c84b3a9471d0",
+      "task": "alt-text",
+      "label": "jacket image in card 1: attempt 2 gets a server error",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/jacket.png",
+        "surroundingText": "Trail jacket $129 Add to cart",
+        "insideControl": false,
+        "image": {
+          "bytes": 520,
+          "mime": "image/png",
+          "sha256": "4daaa2800fa68f5b512fb0b39c74e510689c2c03560264f6e72a458dfa22fa2d"
+        }
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "e1ae928a91ef575c69bb3e12b41a0c3a6868b575d48feab7910c18decd41d7c5",
+      "task": "alt-text",
+      "label": "jacket image in card 2: attempt 1 times out",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/jacket.png",
+        "surroundingText": "Trail jacket, kids $89 Kids size. Ships in 3 days.",
+        "insideControl": false,
+        "image": {
+          "bytes": 520,
+          "mime": "image/png",
+          "sha256": "4daaa2800fa68f5b512fb0b39c74e510689c2c03560264f6e72a458dfa22fa2d"
+        }
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "e1ae928a91ef575c69bb3e12b41a0c3a6868b575d48feab7910c18decd41d7c5",
+      "task": "alt-text",
+      "label": "jacket image in card 2: attempt 2 gets a server error",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/jacket.png",
+        "surroundingText": "Trail jacket, kids $89 Kids size. Ships in 3 days.",
+        "insideControl": false,
+        "image": {
+          "bytes": 520,
+          "mime": "image/png",
+          "sha256": "4daaa2800fa68f5b512fb0b39c74e510689c2c03560264f6e72a458dfa22fa2d"
+        }
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "10bd395443e5c9af92704d5f66246e826a432f7df8c98945a60ef4cf03cc8fac",
+      "task": "alt-text",
+      "label": "divider image: attempt 1 times out",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/divider.png",
+        "surroundingText": "Trail jacket $129 Add to cart Trail jacket, kids $89 Kids size. Ships in 3 days. Email -+ Quantity",
+        "insideControl": false,
+        "image": {
+          "bytes": 120,
+          "mime": "image/png",
+          "sha256": "65afda864069ba69bbf2d0f1390e69fd081b405aa0be25198dd11ea4e0434920"
+        }
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "10bd395443e5c9af92704d5f66246e826a432f7df8c98945a60ef4cf03cc8fac",
+      "task": "alt-text",
+      "label": "divider image: attempt 2 gets a server error",
+      "input": {
+        "pageTitle": "Orbit Outfitters",
+        "src": "images/divider.png",
+        "surroundingText": "Trail jacket $129 Add to cart Trail jacket, kids $89 Kids size. Ships in 3 days. Email -+ Quantity",
+        "insideControl": false,
+        "image": {
+          "bytes": 120,
+          "mime": "image/png",
+          "sha256": "65afda864069ba69bbf2d0f1390e69fd081b405aa0be25198dd11ea4e0434920"
+        }
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "b32e1badb223f6f1e006cc349fba88cba18fa7b2101e7a33bdf545d26e5b5353",
+      "task": "control-name",
+      "label": "logo link: attempt 1 times out",
+      "input": {
+        "role": "link",
+        "html": "<a href=\"/\" class=\"logo\">",
+        "surroundingText": "Sale",
+        "href": "/",
+        "placeholder": null,
+        "iconHints": [
+          "logo"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "b32e1badb223f6f1e006cc349fba88cba18fa7b2101e7a33bdf545d26e5b5353",
+      "task": "control-name",
+      "label": "logo link: attempt 2 gets a server error",
+      "input": {
+        "role": "link",
+        "html": "<a href=\"/\" class=\"logo\">",
+        "surroundingText": "Sale",
+        "href": "/",
+        "placeholder": null,
+        "iconHints": [
+          "logo"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "72079089fd84d349e2edfeebaea1ec3bc36cd5fc09ce021ab75ecdac8593058b",
+      "task": "control-name",
+      "label": "promo link: attempt 1 times out",
+      "input": {
+        "role": "link",
+        "html": "<a href=\"/sale\" class=\"promo\">",
+        "surroundingText": "Sale",
+        "href": "/sale",
+        "placeholder": null,
+        "iconHints": [
+          "promo"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "72079089fd84d349e2edfeebaea1ec3bc36cd5fc09ce021ab75ecdac8593058b",
+      "task": "control-name",
+      "label": "promo link: attempt 2 gets a server error",
+      "input": {
+        "role": "link",
+        "html": "<a href=\"/sale\" class=\"promo\">",
+        "surroundingText": "Sale",
+        "href": "/sale",
+        "placeholder": null,
+        "iconHints": [
+          "promo"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "9a02ab0672adf441f7f6a6ea69de27212e02d14759879ff4c23550f5ca81955c",
+      "task": "control-name",
+      "label": "search textbox: attempt 1 times out",
+      "input": {
+        "role": "textbox",
+        "html": "<input type=\"search\" name=\"q\">",
+        "surroundingText": "Sale",
+        "href": null,
+        "placeholder": null,
+        "iconHints": [],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "9a02ab0672adf441f7f6a6ea69de27212e02d14759879ff4c23550f5ca81955c",
+      "task": "control-name",
+      "label": "search textbox: attempt 2 gets a server error",
+      "input": {
+        "role": "textbox",
+        "html": "<input type=\"search\" name=\"q\">",
+        "surroundingText": "Sale",
+        "href": null,
+        "placeholder": null,
+        "iconHints": [],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 2,
+      "error": "server_error"
+    },
+    {
+      "key": "905a06a6bf8109fff10701857dc6525dbe13155b6dc665c06c5c47d6149a8b01",
+      "task": "control-name",
+      "label": "cart button: attempt 1 times out",
+      "input": {
+        "role": "button",
+        "html": "<button class=\"cart\">",
+        "surroundingText": "Sale",
+        "href": null,
+        "placeholder": null,
+        "iconHints": [
+          "cart"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 1,
+      "error": "timeout"
+    },
+    {
+      "key": "905a06a6bf8109fff10701857dc6525dbe13155b6dc665c06c5c47d6149a8b01",
+      "task": "control-name",
+      "label": "cart button: attempt 2 gets a server error",
+      "input": {
+        "role": "button",
+        "html": "<button class=\"cart\">",
+        "surroundingText": "Sale",
+        "href": null,
+        "placeholder": null,
+        "iconHints": [
+          "cart"
+        ],
+        "pageTitle": "Orbit Outfitters"
+      },
+      "attempt": 2,
+      "error": "server_error"
+    }
+  ]
+}

@@ -1,0 +1,789 @@
+{
+  "recordingKey": "4e5265b9581b55fceb44f4759c2d837a6fad892bf69696b47b778432fee11da7",
+  "label": "combined",
+  "snapshot": {
+    "schemaVersion": 1,
+    "axeVersion": "4.14.0",
+    "treeSha256": "9bdcf981bb41f0c3179a81ea18e1f5213f0dd9adc7e44a1395ff7628a22b8930",
+    "url": "http://127.0.0.1:0/",
+    "pagePath": "/",
+    "title": "Orbit Outfitters",
+    "lang": "en",
+    "axe": {
+      "violations": [
+        {
+          "id": "image-alt",
+          "impact": "critical",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag111",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT7.a",
+            "TT7.b",
+            "EN-301-549",
+            "EN-9.1.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-1.1.1"
+          ],
+          "help": "Images must have alternative text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "img[src$=\"divider.png\"]"
+              ],
+              "html": "<img src=\"images/divider.png\">",
+              "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "any": [
+                {
+                  "id": "has-alt",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an alt attribute"
+                },
+                {
+                  "id": "aria-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-label attribute does not exist or is empty"
+                },
+                {
+                  "id": "aria-labelledby",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                },
+                {
+                  "id": "non-empty-title",
+                  "data": {
+                    "messageKey": "noAttr"
+                  },
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element has no title attribute"
+                },
+                {
+                  "id": "presentational-role",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical"
+            }
+          ],
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation"
+        },
+        {
+          "id": "label",
+          "impact": "critical",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.n",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.1.1"
+          ],
+          "help": "Form elements must have labels",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "#email"
+              ],
+              "html": "<input id=\"email\" type=\"email\">",
+              "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "any": [
+                {
+                  "id": "implicit-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an implicit (wrapped) <label>"
+                },
+                {
+                  "id": "explicit-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an explicit <label>"
+                },
+                {
+                  "id": "aria-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-label attribute does not exist or is empty"
+                },
+                {
+                  "id": "aria-labelledby",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                },
+                {
+                  "id": "non-empty-title",
+                  "data": {
+                    "messageKey": "noAttr"
+                  },
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element has no title attribute"
+                },
+                {
+                  "id": "non-empty-placeholder",
+                  "data": {
+                    "messageKey": "noAttr"
+                  },
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element has no placeholder attribute"
+                },
+                {
+                  "id": "presentational-role",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical"
+            }
+          ],
+          "description": "Ensure every form element has a label"
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag22aa",
+            "wcag258",
+            "EN-301-549v4",
+            "EN-9.2.5.8"
+          ],
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/target-size?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                ".step-down"
+              ],
+              "html": "<button class=\"step step-down\">-</button>",
+              "failureSummary": "Fix any of the following:\n  Target has insufficient size (16px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px.",
+              "any": [
+                {
+                  "id": "target-size",
+                  "data": {
+                    "minSize": 24,
+                    "width": 16,
+                    "height": 16
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Target has insufficient size (16px by 16px, should be at least 24px by 24px)"
+                },
+                {
+                  "id": "target-offset",
+                  "data": {
+                    "closestOffset": 8,
+                    "minOffset": 24
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button class=\"step step-up\">+</button>",
+                      "target": [
+                        ".step-up"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px."
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious"
+            },
+            {
+              "target": [
+                ".step-up"
+              ],
+              "html": "<button class=\"step step-up\">+</button>",
+              "failureSummary": "Fix any of the following:\n  Target has insufficient size (16px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px.",
+              "any": [
+                {
+                  "id": "target-size",
+                  "data": {
+                    "minSize": 24,
+                    "width": 16,
+                    "height": 16
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Target has insufficient size (16px by 16px, should be at least 24px by 24px)"
+                },
+                {
+                  "id": "target-offset",
+                  "data": {
+                    "closestOffset": 8,
+                    "minOffset": 24
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button class=\"step step-down\">-</button>",
+                      "target": [
+                        ".step-down"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px."
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious"
+            }
+          ],
+          "description": "Ensure touch targets have sufficient size and space"
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "h1"
+              ],
+              "html": "<h1>Orbit Outfitters</h1>",
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "24.0pt (32px)",
+                    "fontWeight": "bold",
+                    "messageKey": "bgImage",
+                    "expectedContrastRatio": "3:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<h1>Orbit Outfitters</h1>",
+                      "target": [
+                        "h1"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background image"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious"
+            }
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+        }
+      ],
+      "passesCount": 23,
+      "inapplicableCount": 41,
+      "toolOptions": {
+        "runOnly": {
+          "type": "tag",
+          "values": [
+            "wcag2a",
+            "wcag2aa",
+            "wcag21a",
+            "wcag21aa",
+            "wcag22a",
+            "wcag22aa"
+          ]
+        },
+        "resultTypes": [
+          "violations",
+          "incomplete"
+        ],
+        "reporter": "v1"
+      }
+    },
+    "nodes": {
+      "[\"img[src$=\\\"divider.png\\\"]\"]": {
+        "selector": "[\"img[src$=\\\"divider.png\\\"]\"]",
+        "tag": "img",
+        "attrs": {
+          "src": "images/divider.png"
+        },
+        "text": "",
+        "domTagIndex": 3,
+        "domTagCount": 4,
+        "htmlSnippet": "<img src=\"images/divider.png\">",
+        "rect": {
+          "x": 16,
+          "y": 436,
+          "width": 640,
+          "height": 8
+        },
+        "dataSource": null
+      },
+      "[\"#email\"]": {
+        "selector": "[\"#email\"]",
+        "tag": "input",
+        "attrs": {
+          "id": "email",
+          "type": "email"
+        },
+        "text": "",
+        "domTagIndex": 3,
+        "domTagCount": 4,
+        "htmlSnippet": "<input id=\"email\" type=\"email\">",
+        "rect": {
+          "x": 16,
+          "y": 605,
+          "width": 200,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "[\".step-down\"]": {
+        "selector": "[\".step-down\"]",
+        "tag": "button",
+        "attrs": {
+          "class": "step step-down"
+        },
+        "text": "-",
+        "domTagIndex": 1,
+        "domTagCount": 4,
+        "htmlSnippet": "<button class=\"step step-down\">-</button>",
+        "rect": {
+          "x": 16,
+          "y": 520,
+          "width": 16,
+          "height": 16
+        },
+        "dataSource": null
+      },
+      "[\".step-up\"]": {
+        "selector": "[\".step-up\"]",
+        "tag": "button",
+        "attrs": {
+          "class": "step step-up"
+        },
+        "text": "+",
+        "domTagIndex": 2,
+        "domTagCount": 4,
+        "htmlSnippet": "<button class=\"step step-up\">+</button>",
+        "rect": {
+          "x": 32,
+          "y": 520,
+          "width": 16,
+          "height": 16
+        },
+        "dataSource": null
+      },
+      "[\"h1\"]": {
+        "selector": "[\"h1\"]",
+        "tag": "h1",
+        "attrs": {},
+        "text": "Orbit Outfitters",
+        "domTagIndex": 0,
+        "domTagCount": 1,
+        "htmlSnippet": "<h1>Orbit Outfitters</h1>",
+        "rect": {
+          "x": 512,
+          "y": 60,
+          "width": 480,
+          "height": 120
+        },
+        "dataSource": null
+      },
+      "body > a.skip": {
+        "selector": "body > a.skip",
+        "tag": "a",
+        "attrs": {
+          "class": "skip",
+          "href": "#main"
+        },
+        "text": "Skip to content",
+        "domTagIndex": 0,
+        "domTagCount": 3,
+        "htmlSnippet": "<a class=\"skip\" href=\"#main\">Skip to content</a>",
+        "rect": {
+          "x": 900,
+          "y": 70,
+          "width": 121.84375,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "body > header > div.bar:nth-of-type(1) > a.logo:nth-of-type(1)": {
+        "selector": "body > header > div.bar:nth-of-type(1) > a.logo:nth-of-type(1)",
+        "tag": "a",
+        "attrs": {
+          "href": "/",
+          "class": "logo",
+          "aria-label": "Orbit Outfitters home"
+        },
+        "text": "",
+        "domTagIndex": 1,
+        "domTagCount": 3,
+        "htmlSnippet": "<a href=\"/\" class=\"logo\" aria-label=\"Orbit Outfitters home\"><svg aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#1d3557\"></circle><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#f1c453\"></circle></svg></a>",
+        "rect": {
+          "x": 16,
+          "y": 12,
+          "width": 32,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "body > header > div.bar:nth-of-type(1) > a.promo:nth-of-type(2)": {
+        "selector": "body > header > div.bar:nth-of-type(1) > a.promo:nth-of-type(2)",
+        "tag": "a",
+        "attrs": {
+          "href": "/sale",
+          "class": "promo",
+          "aria-label": "Sale: shop deals"
+        },
+        "text": "Sale",
+        "domTagIndex": 2,
+        "domTagCount": 3,
+        "htmlSnippet": "<a href=\"/sale\" class=\"promo\" aria-label=\"Sale: shop deals\"><span aria-hidden=\"true\">Sale</span></a>",
+        "rect": {
+          "x": 64,
+          "y": 12,
+          "width": 48.03125,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "body > header > div.bar:nth-of-type(1) > input": {
+        "selector": "body > header > div.bar:nth-of-type(1) > input",
+        "tag": "input",
+        "attrs": {
+          "type": "search",
+          "name": "q",
+          "aria-label": "Search products"
+        },
+        "text": "",
+        "domTagIndex": 0,
+        "domTagCount": 4,
+        "htmlSnippet": "<input type=\"search\" name=\"q\" aria-label=\"Search products\">",
+        "rect": {
+          "x": 128.03125,
+          "y": 12,
+          "width": 200,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "body > header > div.bar:nth-of-type(1) > button.cart": {
+        "selector": "body > header > div.bar:nth-of-type(1) > button.cart",
+        "tag": "button",
+        "attrs": {
+          "class": "cart",
+          "aria-label": "Open cart"
+        },
+        "text": "",
+        "domTagIndex": 0,
+        "domTagCount": 4,
+        "htmlSnippet": "<button class=\"cart\" aria-label=\"Open cart\"><svg aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 4h3l3 11h10l2-8H7\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"2\"></path></svg></button>",
+        "rect": {
+          "x": 344.03125,
+          "y": 8,
+          "width": 40,
+          "height": 40
+        },
+        "dataSource": null
+      },
+      "#email-2": {
+        "selector": "#email-2",
+        "tag": "input",
+        "attrs": {
+          "type": "email",
+          "name": "email",
+          "id": "email-2"
+        },
+        "text": "",
+        "domTagIndex": 1,
+        "domTagCount": 4,
+        "htmlSnippet": "<input type=\"email\" name=\"email\" id=\"email-2\">",
+        "rect": {
+          "x": 64.015625,
+          "y": 460,
+          "width": 200,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "#main > div.quantity:nth-of-type(2) > button.step.step-down:nth-of-type(1)": {
+        "selector": "#main > div.quantity:nth-of-type(2) > button.step.step-down:nth-of-type(1)",
+        "tag": "button",
+        "attrs": {
+          "class": "step step-down"
+        },
+        "text": "-",
+        "domTagIndex": 1,
+        "domTagCount": 4,
+        "htmlSnippet": "<button class=\"step step-down\">-</button>",
+        "rect": {
+          "x": 16,
+          "y": 520,
+          "width": 16,
+          "height": 16
+        },
+        "dataSource": null
+      },
+      "#main > div.quantity:nth-of-type(2) > button.step.step-up:nth-of-type(2)": {
+        "selector": "#main > div.quantity:nth-of-type(2) > button.step.step-up:nth-of-type(2)",
+        "tag": "button",
+        "attrs": {
+          "class": "step step-up"
+        },
+        "text": "+",
+        "domTagIndex": 2,
+        "domTagCount": 4,
+        "htmlSnippet": "<button class=\"step step-up\">+</button>",
+        "rect": {
+          "x": 32,
+          "y": 520,
+          "width": 16,
+          "height": 16
+        },
+        "dataSource": null
+      },
+      "#qty": {
+        "selector": "#qty",
+        "tag": "input",
+        "attrs": {
+          "id": "qty",
+          "onkeydown": "if(event.key==='Tab'){event.preventDefault()}"
+        },
+        "text": "",
+        "domTagIndex": 2,
+        "domTagCount": 4,
+        "htmlSnippet": "<input id=\"qty\" onkeydown=\"if(event.key==='Tab'){event.preventDefault()}\">",
+        "rect": {
+          "x": 131.59375,
+          "y": 512,
+          "width": 64,
+          "height": 32
+        },
+        "dataSource": null
+      },
+      "#main > div.cards:nth-of-type(1) > div.card:nth-of-type(1) > div.btn": {
+        "selector": "#main > div.cards:nth-of-type(1) > div.card:nth-of-type(1) > div.btn",
+        "tag": "div",
+        "attrs": {
+          "class": "btn",
+          "onclick": "this.textContent = 'Added'"
+        },
+        "text": "Add to cart",
+        "domTagIndex": 4,
+        "domTagCount": 7,
+        "htmlSnippet": "<div class=\"btn\" onclick=\"this.textContent = 'Added'\">Add to cart</div>",
+        "rect": {
+          "x": 16,
+          "y": 384,
+          "width": 109.375,
+          "height": 40
+        },
+        "dataSource": null
+      }
+    },
+    "domIds": [
+      "email",
+      "email-2",
+      "main",
+      "qty"
+    ],
+    "traversal": {
+      "steps": [
+        {
+          "index": 0,
+          "selector": "body > a.skip",
+          "tag": "a",
+          "id": null,
+          "coveredPoints": 5,
+          "coveredBy": "body > header > div.banner:nth-of-type(2) > h1",
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 1,
+          "selector": "body > header > div.bar:nth-of-type(1) > a.logo:nth-of-type(1)",
+          "tag": "a",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 2,
+          "selector": "body > header > div.bar:nth-of-type(1) > a.promo:nth-of-type(2)",
+          "tag": "a",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 3,
+          "selector": "body > header > div.bar:nth-of-type(1) > input",
+          "tag": "input",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 4,
+          "selector": "body > header > div.bar:nth-of-type(1) > button.cart",
+          "tag": "button",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 5,
+          "selector": "#email-2",
+          "tag": "input",
+          "id": "email-2",
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 6,
+          "selector": "#main > div.quantity:nth-of-type(2) > button.step.step-down:nth-of-type(1)",
+          "tag": "button",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 7,
+          "selector": "#main > div.quantity:nth-of-type(2) > button.step.step-up:nth-of-type(2)",
+          "tag": "button",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 8,
+          "selector": "#qty",
+          "tag": "input",
+          "id": "qty",
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 9,
+          "selector": "#qty",
+          "tag": "input",
+          "id": "qty",
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        },
+        {
+          "index": 10,
+          "selector": "#qty",
+          "tag": "input",
+          "id": "qty",
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        }
+      ],
+      "stoppedBecause": "trap",
+      "interactiveCandidates": [
+        {
+          "selector": "#main > div.cards:nth-of-type(1) > div.card:nth-of-type(1) > div.btn",
+          "tag": "div",
+          "reason": "onclick",
+          "focusable": false,
+          "reached": false,
+          "hasFocusableDescendant": false
+        }
+      ]
+    },
+    "ariaSnapshot": "- link \"Skip to content\":\n  - /url: \"#main\"\n- banner:\n  - link \"Orbit Outfitters home\":\n    - /url: /\n  - 'link \"Sale: shop deals\"':\n    - /url: /sale\n  - searchbox \"Search products\"\n  - button \"Open cart\"\n  - img \"Orbit Outfitters autumn collection banner\"\n  - heading \"Orbit Outfitters\" [level=1]\n- main:\n  - img \"Green waterproof trail jacket with hood\"\n  - paragraph: Trail jacket $129\n  - text: Add to cart\n  - img \"Green trail jacket, kids size\"\n  - paragraph: Trail jacket, kids $89\n  - paragraph: Kids size. Ships in 3 days.\n  - img\n  - text: Email\n  - textbox \"Email\"\n  - button \"-\"\n  - button \"+\"\n  - text: Quantity\n  - textbox \"Quantity\"\n- contentinfo:\n  - paragraph: Orbit Outfitters, outdoor gear since 2026.\n  - textbox\n  - button \"Subscribe\"",
+    "ariaByNode": {
+      "a[1]": "- link \"Orbit Outfitters home\":\n  - /url: /",
+      "a[2]": "- 'link \"Sale: shop deals\"':\n  - /url: /sale",
+      "button[0]": "- button \"Open cart\"",
+      "button[1]": "- button \"-\"",
+      "button[2]": "- button \"+\"",
+      "h1[0]": "- heading \"Orbit Outfitters\" [level=1]",
+      "html[0]": "- document:\n  - link \"Skip to content\":\n    - /url: \"#main\"\n  - banner:\n    - link \"Orbit Outfitters home\":\n      - /url: /\n    - 'link \"Sale: shop deals\"':\n      - /url: /sale\n    - searchbox \"Search products\"\n    - button \"Open cart\"\n    - img \"Orbit Outfitters autumn collection banner\"\n    - heading \"Orbit Outfitters\" [level=1]\n  - main:\n    - img \"Green waterproof trail jacket with hood\"\n    - paragraph: Trail jacket $129\n    - text: Add to cart\n    - img \"Green trail jacket, kids size\"\n    - paragraph: Trail jacket, kids $89\n    - paragraph: Kids size. Ships in 3 days.\n    - img\n    - text: Email\n    - textbox \"Email\"\n    - button \"-\"\n    - button \"+\"\n    - text: Quantity\n    - textbox \"Quantity\"\n  - contentinfo:\n    - paragraph: Orbit Outfitters, outdoor gear since 2026.\n    - textbox\n    - button \"Subscribe\"",
+      "img[0]": "- img \"Orbit Outfitters autumn collection banner\"",
+      "img[1]": "- img \"Green waterproof trail jacket with hood\"",
+      "img[2]": "- img \"Green trail jacket, kids size\"",
+      "img[3]": "- img",
+      "input[0]": "- searchbox \"Search products\"",
+      "input[1]": "- textbox \"Email\"",
+      "input[3]": "- textbox",
+      "p[2]": "- paragraph: Kids size. Ships in 3 days."
+    },
+    "screenshots": {
+      "fullPage": ""
+    },
+    "timings": {
+      "loadMs": 0,
+      "axeMs": 0,
+      "keyboardMs": 0
+    }
+  }
+}

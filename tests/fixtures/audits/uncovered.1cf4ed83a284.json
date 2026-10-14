@@ -1,0 +1,287 @@
+{
+  "recordingKey": "1cf4ed83a284f24d2e8b36f6ee163977435623ec06a2404a52b81b875fc38f4d",
+  "label": "baseline",
+  "snapshot": {
+    "schemaVersion": 1,
+    "axeVersion": "4.14.0",
+    "treeSha256": "519422c2d0267239d273096a4dd85706a48cb1bbb31f921a183e1d1681f9f6c7",
+    "url": "http://127.0.0.1:0/",
+    "pagePath": "/",
+    "title": "Trailhead Coffee",
+    "lang": "en",
+    "axe": {
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "button"
+              ],
+              "html": "<button class=\"menu\"><svg aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 6h18M3 12h18M3 18h18\" stroke=\"#222\" stroke-width=\"2\"></path></svg></button>",
+              "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "any": [
+                {
+                  "id": "button-has-visible-text",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have inner text that is visible to screen readers"
+                },
+                {
+                  "id": "aria-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-label attribute does not exist or is empty"
+                },
+                {
+                  "id": "aria-labelledby",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                },
+                {
+                  "id": "non-empty-title",
+                  "data": {
+                    "messageKey": "noAttr"
+                  },
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element has no title attribute"
+                },
+                {
+                  "id": "implicit-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an implicit (wrapped) <label>"
+                },
+                {
+                  "id": "explicit-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an explicit <label>"
+                },
+                {
+                  "id": "presentational-role",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical"
+            }
+          ],
+          "description": "Ensure buttons have discernible text"
+        },
+        {
+          "id": "image-alt",
+          "impact": "critical",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag111",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT7.a",
+            "TT7.b",
+            "EN-301-549",
+            "EN-9.1.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-1.1.1"
+          ],
+          "help": "Images must have alternative text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "img"
+              ],
+              "html": "<img src=\"mug.png\" width=\"96\" height=\"96\">",
+              "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "any": [
+                {
+                  "id": "has-alt",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element does not have an alt attribute"
+                },
+                {
+                  "id": "aria-label",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-label attribute does not exist or is empty"
+                },
+                {
+                  "id": "aria-labelledby",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                },
+                {
+                  "id": "non-empty-title",
+                  "data": {
+                    "messageKey": "noAttr"
+                  },
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element has no title attribute"
+                },
+                {
+                  "id": "presentational-role",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical"
+            }
+          ],
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation"
+        }
+      ],
+      "incomplete": [],
+      "passesCount": 9,
+      "inapplicableCount": 53,
+      "toolOptions": {
+        "runOnly": {
+          "type": "tag",
+          "values": [
+            "wcag2a",
+            "wcag2aa",
+            "wcag21a",
+            "wcag21aa",
+            "wcag22a",
+            "wcag22aa"
+          ]
+        },
+        "resultTypes": [
+          "violations",
+          "incomplete"
+        ],
+        "reporter": "v1"
+      }
+    },
+    "nodes": {
+      "[\"button\"]": {
+        "selector": "[\"button\"]",
+        "tag": "button",
+        "attrs": {
+          "class": "menu"
+        },
+        "text": "",
+        "domTagIndex": 0,
+        "domTagCount": 1,
+        "htmlSnippet": "<button class=\"menu\"><svg aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 6h18M3 12h18M3 18h18\" stroke=\"#222\" stroke-width=\"2\"></path></svg></button>",
+        "rect": {
+          "x": 8,
+          "y": 229.875,
+          "width": 40,
+          "height": 40
+        },
+        "dataSource": null
+      },
+      "[\"img\"]": {
+        "selector": "[\"img\"]",
+        "tag": "img",
+        "attrs": {
+          "src": "mug.png",
+          "width": "96",
+          "height": "96"
+        },
+        "text": "",
+        "domTagIndex": 0,
+        "domTagCount": 1,
+        "htmlSnippet": "<img src=\"mug.png\" width=\"96\" height=\"96\">",
+        "rect": {
+          "x": 8,
+          "y": 79.875,
+          "width": 96,
+          "height": 96
+        },
+        "dataSource": null
+      },
+      "#main > button.menu": {
+        "selector": "#main > button.menu",
+        "tag": "button",
+        "attrs": {
+          "class": "menu"
+        },
+        "text": "",
+        "domTagIndex": 0,
+        "domTagCount": 1,
+        "htmlSnippet": "<button class=\"menu\"><svg aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 6h18M3 12h18M3 18h18\" stroke=\"#222\" stroke-width=\"2\"></path></svg></button>",
+        "rect": {
+          "x": 8,
+          "y": 229.875,
+          "width": 40,
+          "height": 40
+        },
+        "dataSource": null
+      }
+    },
+    "domIds": [
+      "main"
+    ],
+    "traversal": {
+      "steps": [
+        {
+          "index": 0,
+          "selector": "#main > button.menu",
+          "tag": "button",
+          "id": null,
+          "coveredPoints": 0,
+          "coveredBy": null,
+          "tabindex": null,
+          "hostKind": "plain"
+        }
+      ],
+      "stoppedBecause": "body",
+      "interactiveCandidates": []
+    },
+    "ariaSnapshot": "- main:\n  - heading \"Trailhead Coffee\" [level=1]\n  - img\n  - paragraph: Fresh roasts every morning, two blocks from the trail.\n  - button",
+    "ariaByNode": {
+      "button[0]": "- button",
+      "img[0]": "- img"
+    },
+    "screenshots": {
+      "fullPage": ""
+    },
+    "timings": {
+      "loadMs": 0,
+      "axeMs": 0,
+      "keyboardMs": 0
+    }
+  }
+}

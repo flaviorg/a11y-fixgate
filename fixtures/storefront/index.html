@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="bar">
+    <a href="/" class="logo"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1d3557"></circle><circle cx="12" cy="12" r="4" fill="#f1c453"></circle></svg></a>
+    <a href="/sale" class="promo"><span aria-hidden="true">Sale</span></a>
+    <input type="search" name="q">
+    <button class="cart"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 4h3l3 11h10l2-8H7" fill="none" stroke="#1d3557" stroke-width="2"></path></svg></button>
+  </div>
+  <div class="banner">
+    <img src="images/hero.png">
+    <h1>Orbit Outfitters</h1>
+  </div>
+</header>
+<main id="main">
+  <div class="cards">
+    <div class="card">
+      <img src="images/jacket.png">
+      <p class="price">Trail jacket $129</p>
+      <div class="btn" onclick="this.textContent = 'Added'">Add to cart</div>
+    </div>
+    <div class="card">
+      <img src="images/jacket.png">
+      <p class="price">Trail jacket, kids $89</p>
+      <p class="note" style="color:#9a9a9a">Kids size. Ships in 3 days.</p>
+    </div>
+  </div>
+  <img src="images/divider.png">
+  <form class="signup" action="/signup">
+    <label>Email</label><input type="email" name="email">
+  </form>
+  <div class="quantity">
+    <button class="step step-down">-</button><button class="step step-up">+</button>
+    <label for="qty">Quantity</label>
+    <input id="qty" onkeydown="if(event.key==='Tab'){event.preventDefault()}">
+  </div>
+</main>
+<footer>
+  <p>Orbit Outfitters, outdoor gear since 2026.</p>
+</footer>
+<script src="newsletter.js"></script>
+</body>
+</html>

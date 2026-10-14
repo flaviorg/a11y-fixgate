@@ -1,0 +1,7 @@
+#!/bin/sh
+# [REP-04] The pre-commit hook: typecheck, unit tests and the secrets scan. Enable it once with: npm run setup:hooks
+set -e
+cd "$(dirname "$0")/.."
+npm run --silent typecheck
+npm run --silent test:unit
+npm run --silent check:secrets

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'">
+<title>a11y-fixgate report: /</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #ffffff; color: #1b1f24; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: #0a4cb8; }
+a:focus-visible, summary:focus-visible, pre:focus-visible { outline: 3px solid #0a4cb8; outline-offset: 2px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: #0a4cb8; color: #ffffff; padding: 8px 14px; border-radius: 4px; z-index: 10; }
+.skip:focus { left: 8px; }
+header.top, main, footer { max-width: 62rem; margin: 0 auto; padding: 0 16px; }
+header.top { padding-top: 24px; padding-bottom: 8px; border-bottom: 1px solid #c5ccd6; }
+header.top p { margin: 4px 0; color: #3f4854; }
+h1 { font-size: 1.9rem; margin: 0 0 8px; }
+h2 { font-size: 1.4rem; margin: 32px 0 8px; padding-top: 8px; border-top: 1px solid #c5ccd6; }
+h3 { font-size: 1.1rem; margin: 20px 0 6px; }
+h4 { font-size: 1rem; margin: 0 0 6px; }
+nav ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+nav a { display: inline-block; padding: 4px 10px; min-height: 28px; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+caption { text-align: left; font-weight: 600; padding: 4px 0; }
+th, td { border: 1px solid #c5ccd6; padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: #eef1f5; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+pre { margin: 8px 0; padding: 10px; background: #f3f5f8; border: 1px solid #c5ccd6; border-radius: 4px; overflow-x: auto; max-width: 100%; font: 0.85rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre; }
+.add { background: #d4f1dc; display: inline-block; min-width: 100%; }
+.del { background: #fbd8dc; display: inline-block; min-width: 100%; }
+.hunk { background: #e1e6ed; display: inline-block; min-width: 100%; }
+.card { border: 1px solid #c5ccd6; border-radius: 6px; padding: 12px; margin: 10px 0; background: #fafbfc; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 0.85rem; margin: 0 4px 4px 0; border: 1px solid transparent; }
+.ok { background: #d4f1dc; color: #0d4a22; border-color: #8bcf9f; }
+.review { background: #fff0c2; color: #5a3d00; border-color: #e0bd52; }
+.bad { background: #fbd8dc; color: #7a1420; border-color: #e19aa3; }
+.neutral { background: #e4e8ee; color: #26303b; border-color: #b3bcc9; }
+.muted { color: #3f4854; }
+.finding { margin-bottom: 24px; }
+ul.plain { padding-left: 20px; }
+img { max-width: 100%; height: auto; border: 1px solid #c5ccd6; }
+details { margin: 8px 0; }
+summary { cursor: pointer; padding: 4px 0; min-height: 28px; }
+footer { padding-top: 16px; padding-bottom: 32px; color: #3f4854; border-top: 1px solid #c5ccd6; margin-top: 32px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the report</a>
+<header class="top">
+<h1>Accessibility fix report</h1>
+<p>Page <code>/</code>, audited with axe-core 4.14.0 and three keyboard checks. 15 violation(s), 1 needs-review, 3 keyboard finding(s).</p>
+<nav aria-label="Report sections"><ul><li><a href="#h-summary">Summary</a></li><li><a href="#h-fixes">Fixes</a></li><li><a href="#h-suggestions">Suggestions</a></li><li><a href="#h-review">Needs review</a></li><li><a href="#h-unmapped">Unmapped</a></li><li><a href="#h-keyboard">Keyboard trace</a></li><li><a href="#h-method">Methodology</a></li><li><a href="#h-standards">Standards note</a></li></ul></nav>
+</header>
+<main id="main">
+<section aria-labelledby="h-summary"><h2 id="h-summary">Summary</h2>
+<table><caption>What the audit found on /</caption>
+<thead><tr><th scope="col">Item</th><th scope="col">Count</th></tr></thead><tbody>
+<tr><th scope="row">axe violations</th><td>15</td></tr>
+<tr><th scope="row">axe needs-review items (not fixed)</th><td>1</td></tr>
+<tr><th scope="row">Keyboard findings</th><td>3</td></tr>
+<tr><th scope="row">Findings mapped to the source</th><td>18</td></tr>
+<tr><th scope="row">Findings not mapped</th><td>1</td></tr>
+</tbody></table>
+<table><caption>How each fix was verified (re-audited in a real browser; the target finding is gone and no new axe or keyboard finding appeared)</caption>
+<thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">Count</th></tr></thead><tbody>
+<tr><th scope="row">Verified</th><td>A deterministic fix. The browser shows the finding gone and nothing new.</td><td>3</td></tr>
+<tr><th scope="row">Verified present, needs review</th><td>A value written by a model, a colour change or an inferred language. Its presence is verified; its meaning is not.</td><td>8</td></tr>
+<tr><th scope="row">Rejected</th><td>The re-audit found a new finding, or the target stayed.</td><td>2</td></tr>
+<tr><th scope="row">Gate-rejected</th><td>A proposed value failed a value gate before any audit.</td><td>1</td></tr>
+<tr><th scope="row">Suggestions only</th><td>Findings that no fixer can change safely.</td><td>6</td></tr>
+<tr><th scope="row">Unmapped</th><td>Findings that could not be tied to one place in the source.</td><td>1</td></tr>
+<tr><th scope="row">Conflicts</th><td>Accepted fixes left out because they overlap another.</td><td>0</td></tr>
+<tr><th scope="row">Skipped</th><td>Findings not attempted because of a limit or because no strategy exists.</td><td>0</td></tr>
+</tbody></table>
+<ul class="plain">
+<li>Accepted fixes: 11.</li>
+<li>Needs human review: 8 (accepted fixes whose text or colour a person must confirm).</li>
+<li>Needs review, not fixed: 1 (axe could not decide; listed below).</li>
+<li>Remaining in source: 16 violation(s) (8 critical, 8 serious); fixable by fixes.patch: 11.</li>
+
+</ul>
+
+<h3>Who is blocked</h3>
+<table><caption>Findings that block each kind of user (severity 3, project rating): in the files now, and after the combined fixes.</caption>
+<thead><tr><th scope="col">User</th><th scope="col">Before the fixes</th><th scope="col">After the combined fixes</th></tr></thead>
+<tbody><tr><th scope="row">Screen reader user</th><td>11</td><td>3</td></tr><tr><th scope="row">Keyboard-only user</th><td>2</td><td>2</td></tr><tr><th scope="row">Low-vision user</th><td>0</td><td>0</td></tr><tr><th scope="row">Cognitive-access user</th><td>0</td><td>0</td></tr></tbody></table>
+<p class="muted">Persona severities are the project&#39;s own rating (0 none, 1 friction, 2 major, 3 blocker), not a measurement.</p>
+<figure><img src="screenshots/page.png" alt="Full page before fixes"><figcaption class="muted">Before the fixes</figcaption></figure><figure><img src="screenshots/page.after.png" alt="Full page after the combined fixes"><figcaption class="muted">After the combined fixes</figcaption></figure></section>
+<section aria-labelledby="h-fixes"><h2 id="h-fixes">Fixes</h2>
+<p>Each card is one attempt. A candidate edit is applied to a scratch copy, the page is re-audited in the browser, and the acceptance gate compares fingerprints before and after.</p>
+<div class="finding" id="fix-document-title-1"><h3>document-title-1: Documents must have &lt;title&gt; element to aid in navigation</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>document-title</code>, Documents must have &lt;title&gt; element to aid in navigation</p>
+<p class="muted">Location: <code>index.html:2:1</code>. Element: <code>&lt;html&gt;&lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; &lt;/head&gt; &lt;body&gt; &lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt; &lt;header&gt; &lt;div class=&quot;bar&quot;&gt; &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot;</code></p>
+<p class="muted">Check result: Fix any of the following: Document does not have a non-empty &lt;title&gt; element</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 2 of 3 (project rating): A screen reader announces the page with no title; the tab and the history show a bare address.</li><li><strong>Cognitive-access user</strong>, severity 2 of 3 (project rating): Without a page title it is hard to confirm which page is open or to find it again.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html">WCAG 2.2 Understanding page for 2.4.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>html[0]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of document-title-1 (html[0]), before and after the combined fixes">  - document:
+    - link &quot;Skip to content&quot;:
+      - /url: &quot;#main&quot;
+    - banner:
+<span class="del">-     - link:</span>
+<span class="add">+     - link &quot;Orbit Outfitters home&quot;:</span>
+        - /url: /
+<span class="del">-     - link:</span>
+<span class="add">+     - &#39;link &quot;Sale: shop deals&quot;&#39;:</span>
+        - /url: /sale
+<span class="del">-     - searchbox</span>
+<span class="del">-     - button</span>
+<span class="del">-     - img</span>
+<span class="add">+     - searchbox &quot;Search products&quot;</span>
+<span class="add">+     - button &quot;Open cart&quot;</span>
+<span class="add">+     - img &quot;Orbit Outfitters autumn collection banner&quot;</span>
+      - heading &quot;Orbit Outfitters&quot; [level=1]
+    - main:
+<span class="del">-     - img</span>
+<span class="add">+     - img &quot;Green waterproof trail jacket with hood&quot;</span>
+      - paragraph: Trail jacket $129
+      - text: Add to cart
+<span class="del">-     - img</span>
+<span class="add">+     - img &quot;Green trail jacket, kids size&quot;</span>
+      - paragraph: Trail jacket, kids $89
+      - paragraph: Kids size. Ships in 3 days.
+      - img
+      - text: Email
+<span class="del">-     - textbox</span>
+<span class="add">+     - textbox &quot;Email&quot;</span>
+      - button &quot;-&quot;
+      - button &quot;+&quot;
+      - text: Quantity
+      - textbox &quot;Quantity&quot;
+    - contentinfo:
+      - paragraph: Orbit Outfitters, outdoor gear since 2026.
+      - textbox
+      - button &quot;Subscribe&quot;
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: title-from-h1</h4>
+<p><span class="badge ok">accepted</span><span class="badge ok">Verified</span><span class="badge neutral">deterministic</span></p>
+<p>&lt;title&gt;Orbit Outfitters&lt;/title&gt;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+
+<pre role="group" tabindex="0" aria-label="Source diff for document-title-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -1,6 +1,6 @@</span>
+ &lt;!doctype html&gt;
+ &lt;html&gt;
+<span class="del">-&lt;head&gt;</span>
+<span class="add">+&lt;head&gt;&lt;title&gt;Orbit Outfitters&lt;/title&gt;</span>
+ &lt;meta charset=&quot;utf-8&quot;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+</pre></article></div><div class="finding" id="fix-html-has-lang-1"><h3>html-has-lang-1: &lt;html&gt; element must have a lang attribute</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>html-has-lang</code>, &lt;html&gt; element must have a lang attribute</p>
+<p class="muted">Location: <code>index.html:2:1</code>. Element: <code>&lt;html&gt;&lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; &lt;/head&gt; &lt;body&gt; &lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt; &lt;header&gt; &lt;div class=&quot;bar&quot;&gt; &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot;</code></p>
+<p class="muted">Check result: Fix any of the following: The &lt;html&gt; element does not have a lang attribute</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 2 of 3 (project rating): A screen reader falls back to the system voice, so the text may be pronounced with the wrong accent.</li><li><strong>Low-vision user</strong>, severity 1 of 3 (project rating): Translation and reading tools cannot tell which language to use.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html">WCAG 2.2 Understanding page for 3.1.1</a>.</p>
+<p><strong>Screen reader view</strong> of <code>html[0]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of html-has-lang-1 (html[0]), before and after the combined fixes">  - document:
+    - link &quot;Skip to content&quot;:
+      - /url: &quot;#main&quot;
+    - banner:
+<span class="del">-     - link:</span>
+<span class="add">+     - link &quot;Orbit Outfitters home&quot;:</span>
+        - /url: /
+<span class="del">-     - link:</span>
+<span class="add">+     - &#39;link &quot;Sale: shop deals&quot;&#39;:</span>
+        - /url: /sale
+<span class="del">-     - searchbox</span>
+<span class="del">-     - button</span>
+<span class="del">-     - img</span>
+<span class="add">+     - searchbox &quot;Search products&quot;</span>
+<span class="add">+     - button &quot;Open cart&quot;</span>
+<span class="add">+     - img &quot;Orbit Outfitters autumn collection banner&quot;</span>
+      - heading &quot;Orbit Outfitters&quot; [level=1]
+    - main:
+<span class="del">-     - img</span>
+<span class="add">+     - img &quot;Green waterproof trail jacket with hood&quot;</span>
+      - paragraph: Trail jacket $129
+      - text: Add to cart
+<span class="del">-     - img</span>
+<span class="add">+     - img &quot;Green trail jacket, kids size&quot;</span>
+      - paragraph: Trail jacket, kids $89
+      - paragraph: Kids size. Ships in 3 days.
+      - img
+      - text: Email
+<span class="del">-     - textbox</span>
+<span class="add">+     - textbox &quot;Email&quot;</span>
+      - button &quot;-&quot;
+      - button &quot;+&quot;
+      - text: Quantity
+      - textbox &quot;Quantity&quot;
+    - contentinfo:
+      - paragraph: Orbit Outfitters, outdoor gear since 2026.
+      - textbox
+      - button &quot;Subscribe&quot;
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: html-lang</h4>
+<p><span class="badge ok">accepted</span><span class="badge ok">Verified</span><span class="badge neutral">deterministic</span></p>
+<p>lang=&quot;en&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+
+<pre role="group" tabindex="0" aria-label="Source diff for html-has-lang-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -1,5 +1,5 @@</span>
+ &lt;!doctype html&gt;
+<span class="del">-&lt;html&gt;</span>
+<span class="add">+&lt;html lang=&quot;en&quot;&gt;</span>
+ &lt;head&gt;
+ &lt;meta charset=&quot;utf-8&quot;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+</pre></article></div><div class="finding" id="fix-link-name-1"><h3>link-name-1: Links must have discernible text</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>link-name</code>, Links must have discernible text</p>
+<p class="muted">Location: <code>index.html:12:5</code>. Element: <code>&lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;</code></p>
+<p class="muted">Check result: Fix all of the following: Element is in tab order and does not have accessible text Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 link as just &#39;link&#39; or reads the URL; the destination (the link) is unknown.</li><li><strong>Keyboard-only user</strong>, severity 2 of 3 (project rating): Voice control users cannot say the name of the link.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">WCAG 2.2 Understanding page for 2.4.4, 4.1.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>a[1]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of link-name-1 (a[1]), before and after the combined fixes"><span class="del">- - link:</span>
+<span class="add">+ - link &quot;Orbit Outfitters home&quot;:</span>
+    - /url: /
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: aria-label-llm</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>aria-label=&quot;Orbit Outfitters home&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>link-name-1/aria-label-llm/a1</code>, gate passed.</p><ul class="plain"><li>Proposed value: <code>Orbit Outfitters home</code></li><li>Model reason: logo link to the home page</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for link-name-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -9,7 +9,7 @@</span>
+ &lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;
+ &lt;header&gt;
+   &lt;div class=&quot;bar&quot;&gt;
+<span class="del">-    &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;</span>
+<span class="add">+    &lt;a href=&quot;/&quot; class=&quot;logo&quot; aria-label=&quot;Orbit Outfitters home&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;</span>
+     &lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;
+     &lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;
+     &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;
+</pre></article></div><div class="finding" id="fix-link-name-2"><h3>link-name-2: Links must have discernible text</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>link-name</code>, Links must have discernible text</p>
+<p class="muted">Location: <code>index.html:13:5</code>. Element: <code>&lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;</code></p>
+<p class="muted">Check result: Fix all of the following: Element is in tab order and does not have accessible text Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 link as just &#39;link&#39; or reads the URL; the destination (the link) is unknown.</li><li><strong>Keyboard-only user</strong>, severity 2 of 3 (project rating): Voice control users cannot say the name of the link.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">WCAG 2.2 Understanding page for 2.4.4, 4.1.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>a[2]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of link-name-2 (a[2]), before and after the combined fixes"><span class="del">- - link:</span>
+<span class="add">+ - &#39;link &quot;Sale: shop deals&quot;&#39;:</span>
+    - /url: /sale
+</pre>
+<article class="card" data-outcome="rejected"><h4>REJECTED: aria-label-llm</h4>
+<p><span class="badge bad">rejected</span><span class="badge review">LLM (needs human review)</span></p>
+<p>aria-label=&quot;Shop deals&quot;</p>
+<p>Verdict: <strong>new-violation</strong> (the target finding was gone, but the fix is rejected because of what it introduced). The candidate was applied to a scratch copy and re-audited in the browser; it is not part of fixes.patch.</p>
+<p>New findings that the re-audit introduced:</p><ul class="plain"><li><code>label-content-name-mismatch</code> at <code>src:index.html#a[2]</code> (fingerprint <code>3cfde1e75fce84c8</code>)</li></ul>
+<p class="muted">LLM request <code>link-name-2/aria-label-llm/a1</code>, passed the value gates.</p><ul class="plain"><li>Proposed value: <code>Shop deals</code></li><li>Model reason: link to the sale page</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for link-name-2 (candidate 1 of 2)">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -10,7 +10,7 @@</span>
+ &lt;header&gt;
+   &lt;div class=&quot;bar&quot;&gt;
+     &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;
+<span class="del">-    &lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;</span>
+<span class="add">+    &lt;a href=&quot;/sale&quot; class=&quot;promo&quot; aria-label=&quot;Shop deals&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;</span>
+     &lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;
+     &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;
+   &lt;/div&gt;
+</pre></article><article class="card" data-outcome="accepted"><h4>ACCEPTED: aria-label-llm, attempt 2</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>aria-label=&quot;Sale: shop deals&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>link-name-2/aria-label-llm/a2</code>, gate passed.</p><ul class="plain"><li>Proposed value: <code>Sale: shop deals</code></li><li>Model reason: starts with the visible text Sale</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for link-name-2 (candidate 2 of 2)">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -10,7 +10,7 @@</span>
+ &lt;header&gt;
+   &lt;div class=&quot;bar&quot;&gt;
+     &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;
+<span class="del">-    &lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;</span>
+<span class="add">+    &lt;a href=&quot;/sale&quot; class=&quot;promo&quot; aria-label=&quot;Sale: shop deals&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;</span>
+     &lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;
+     &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;
+   &lt;/div&gt;
+</pre></article></div><div class="finding" id="fix-label-1"><h3>label-1: Form elements must have labels</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>label</code>, Form elements must have labels</p>
+<p class="muted">Location: <code>index.html:14:5</code>. Element: <code>&lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an implicit (wrapped) &lt;label&gt; Element does not have an explicit &lt;label&gt; aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element has no placeholder attribute Element&#39;s default semantics were not overridde</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces the search field with no name, so the person cannot tell what to type into it.</li><li><strong>Cognitive-access user</strong>, severity 2 of 3 (project rating): Without a programmatic label the purpose of the search field has to be guessed.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html">WCAG 2.2 Understanding page for 1.3.1, 3.3.2, 4.1.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>input[0]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of label-1 (input[0]), before and after the combined fixes"><span class="del">- - searchbox</span>
+<span class="add">+ - searchbox &quot;Search products&quot;</span>
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: aria-label-llm</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>aria-label=&quot;Search products&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>label-1/aria-label-llm/a1</code>, gate passed.</p><ul class="plain"><li>Proposed value: <code>Search products</code></li><li>Model reason: search field in the header</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for label-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -11,7 +11,7 @@</span>
+   &lt;div class=&quot;bar&quot;&gt;
+     &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;
+     &lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;
+<span class="del">-    &lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;</span>
+<span class="add">+    &lt;input type=&quot;search&quot; name=&quot;q&quot; aria-label=&quot;Search products&quot;&gt;</span>
+     &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;banner&quot;&gt;
+</pre></article></div><div class="finding" id="fix-button-name-1"><h3>button-name-1: Buttons must have discernible text</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>button-name</code>, Buttons must have discernible text</p>
+<p class="muted">Location: <code>index.html:15:5</code>. Element: <code>&lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have inner text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element does not have an implicit (wrapped) &lt;label&gt; Element does not have an explicit &lt;label&gt; Element&#39;s defaul</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 button as just &#39;button&#39;; the action (the button) is unknown.</li><li><strong>Keyboard-only user</strong>, severity 2 of 3 (project rating): Voice control users cannot say the name of the button.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">WCAG 2.2 Understanding page for 4.1.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>button[0]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of button-name-1 (button[0]), before and after the combined fixes"><span class="del">- - button</span>
+<span class="add">+ - button &quot;Open cart&quot;</span>
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: aria-label-llm</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>aria-label=&quot;Open cart&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>button-name-1/aria-label-llm/a1</code>, gate passed.</p><ul class="plain"><li>Proposed value: <code>Open cart</code></li><li>Model reason: cart icon button</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for button-name-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -12,7 +12,7 @@</span>
+     &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;#1d3557&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot; fill=&quot;#f1c453&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/a&gt;
+     &lt;a href=&quot;/sale&quot; class=&quot;promo&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;Sale&lt;/span&gt;&lt;/a&gt;
+     &lt;input type=&quot;search&quot; name=&quot;q&quot;&gt;
+<span class="del">-    &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;</span>
+<span class="add">+    &lt;button class=&quot;cart&quot; aria-label=&quot;Open cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;</span>
+   &lt;/div&gt;
+   &lt;div class=&quot;banner&quot;&gt;
+     &lt;img src=&quot;images/hero.png&quot;&gt;
+</pre></article></div><div class="finding" id="fix-image-alt-1"><h3>image-alt-1: Images must have alternative text</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>image-alt</code>, Images must have alternative text</p>
+<p class="muted">Location: <code>index.html:18:5</code>. Element: <code>&lt;img src=&quot;images/hero.png&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an alt attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element&#39;s default semantics were not overridden with role=&quot;none&quot; or role=&quot;presentation&quot;</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 image only as &#39;image&#39; or by file name (hero.png); the product cannot be told apart.</li><li><strong>Low-vision user</strong>, severity 1 of 3 (project rating): Text-only and high-zoom views drop 1 image (hero.png) and leave nothing in their place.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">WCAG 2.2 Understanding page for 1.1.1</a>.</p>
+<p><strong>Screen reader view</strong> of <code>img[0]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of image-alt-1 (img[0]), before and after the combined fixes"><span class="del">- - img</span>
+<span class="add">+ - img &quot;Orbit Outfitters autumn collection banner&quot;</span>
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: alt-text-llm</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>alt=&quot;Orbit Outfitters autumn collection banner&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>image-alt-1/alt-text-llm/a1</code>, gate passed.</p><ul class="plain"><li>Model kind: <code>informative</code></li><li>Proposed value: <code>Orbit Outfitters autumn collection banner</code></li><li>Model reason: hero banner of the storefront</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for image-alt-1">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -15,7 +15,7 @@</span>
+     &lt;button class=&quot;cart&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M3 4h3l3 11h10l2-8H7&quot; fill=&quot;none&quot; stroke=&quot;#1d3557&quot; stroke-width=&quot;2&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;banner&quot;&gt;
+<span class="del">-    &lt;img src=&quot;images/hero.png&quot;&gt;</span>
+<span class="add">+    &lt;img src=&quot;images/hero.png&quot; alt=&quot;Orbit Outfitters autumn collection banner&quot;&gt;</span>
+     &lt;h1&gt;Orbit Outfitters&lt;/h1&gt;
+   &lt;/div&gt;
+ &lt;/header&gt;
+</pre></article></div><div class="finding" id="fix-image-alt-2"><h3>image-alt-2: Images must have alternative text</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>image-alt</code>, Images must have alternative text</p>
+<p class="muted">Location: <code>index.html:25:7</code>. Element: <code>&lt;img src=&quot;images/jacket.png&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an alt attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element&#39;s default semantics were not overridden with role=&quot;none&quot; or role=&quot;presentation&quot;</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 image only as &#39;image&#39; or by file name (jacket.png); the product cannot be told apart.</li><li><strong>Low-vision user</strong>, severity 1 of 3 (project rating): Text-only and high-zoom views drop 1 image (jacket.png) and leave nothing in their place.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">WCAG 2.2 Understanding page for 1.1.1</a>.</p>
+<p><strong>Screen reader view</strong> of <code>img[1]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of image-alt-2 (img[1]), before and after the combined fixes"><span class="del">- - img</span>
+<span class="add">+ - img &quot;Green waterproof trail jacket with hood&quot;</span>
+</pre>
+<article class="card" data-outcome="gate-rejected"><h4>GATE-REJECTED: alt-text-llm</h4>
+<p><span class="badge bad">gate-rejected</span><span class="badge review">LLM (needs human review)</span></p>
+<p>Reason: <code>alt-is-filename</code>. The value was refused before any audit; nothing was applied.</p>
+<ul class="plain"><li>Model kind: <code>informative</code></li><li>Proposed value: <code>jacket.png</code></li><li>Model reason: file name</li></ul></article><article class="card" data-outcome="accepted"><h4>ACCEPTED: alt-text-llm, attempt 2</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>alt=&quot;Green waterproof trail jacket with hood&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>image-alt-2/alt-text-llm/a2</code>, gate passed.</p><ul class="plain"><li>Model kind: <code>informative</code></li><li>Proposed value: <code>Green waterproof trail jacket with hood</code></li><li>Model reason: product photo</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for image-alt-2 (candidate 2 of 2)">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -22,7 +22,7 @@</span>
+ &lt;main id=&quot;main&quot;&gt;
+   &lt;div class=&quot;cards&quot;&gt;
+     &lt;div class=&quot;card&quot;&gt;
+<span class="del">-      &lt;img src=&quot;images/jacket.png&quot;&gt;</span>
+<span class="add">+      &lt;img src=&quot;images/jacket.png&quot; alt=&quot;Green waterproof trail jacket with hood&quot;&gt;</span>
+       &lt;p class=&quot;price&quot;&gt;Trail jacket $129&lt;/p&gt;
+       &lt;div class=&quot;btn&quot; onclick=&quot;this.textContent = &#39;Added&#39;&quot;&gt;Add to cart&lt;/div&gt;
+     &lt;/div&gt;
+</pre></article></div><div class="finding" id="fix-image-alt-3"><h3>image-alt-3: Images must have alternative text</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>image-alt</code>, Images must have alternative text</p>
+<p class="muted">Location: <code>index.html:30:7</code>. Element: <code>&lt;img src=&quot;images/jacket.png&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an alt attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element&#39;s default semantics were not overridden with role=&quot;none&quot; or role=&quot;presentation&quot;</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 image only as &#39;image&#39; or by file name (jacket.png); the product cannot be told apart.</li><li><strong>Low-vision user</strong>, severity 1 of 3 (project rating): Text-only and high-zoom views drop 1 image (jacket.png) and leave nothing in their place.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">WCAG 2.2 Understanding page for 1.1.1</a>.</p>
+<p><strong>Screen reader view</strong> of <code>img[2]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of image-alt-3 (img[2]), before and after the combined fixes"><span class="del">- - img</span>
+<span class="add">+ - img &quot;Green trail jacket, kids size&quot;</span>
+</pre>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: alt-text-llm</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, needs review</span><span class="badge review">LLM (needs human review)</span></p>
+<p>alt=&quot;Green trail jacket, kids size&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+<p class="muted">LLM request <code>image-alt-3/alt-text-llm/a1</code>, gate passed.</p><ul class="plain"><li>Model kind: <code>informative</code></li><li>Proposed value: <code>Green trail jacket, kids size</code></li><li>Model reason: product photo of the kids model</li></ul>
+<pre role="group" tabindex="0" aria-label="Source diff for image-alt-3">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -27,7 +27,7 @@</span>
+       &lt;div class=&quot;btn&quot; onclick=&quot;this.textContent = &#39;Added&#39;&quot;&gt;Add to cart&lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;card&quot;&gt;
+<span class="del">-      &lt;img src=&quot;images/jacket.png&quot;&gt;</span>
+<span class="add">+      &lt;img src=&quot;images/jacket.png&quot; alt=&quot;Green trail jacket, kids size&quot;&gt;</span>
+       &lt;p class=&quot;price&quot;&gt;Trail jacket, kids $89&lt;/p&gt;
+       &lt;p class=&quot;note&quot; style=&quot;color:#9a9a9a&quot;&gt;Kids size. Ships in 3 days.&lt;/p&gt;
+     &lt;/div&gt;
+</pre></article></div><div class="finding" id="fix-color-contrast-2"><h3>color-contrast-2: Elements must meet minimum color contrast ratio thresholds</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>color-contrast</code>, Elements must meet minimum color contrast ratio thresholds</p>
+<p class="muted">Location: <code>index.html:32:7</code>. Element: <code>&lt;p class=&quot;note&quot; style=&quot;color:#9a9a9a&quot;&gt;Kids size. Ships in 3 days.&lt;/p&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element has insufficient color contrast of 2.81 (foreground color: #9a9a9a, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+<ul class="plain"><li><strong>Low-vision user</strong>, severity 2 of 3 (project rating): The text (Kids size. Ships in 3 days.) has a contrast ratio of 2.81:1, below the required minimum, so it fades out for low-vision readers.</li><li><strong>Cognitive-access user</strong>, severity 1 of 3 (project rating): Faint text (Kids size. Ships in 3 days.) is harder to read for people with dyslexia or attention difficulties.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">WCAG 2.2 Understanding page for 1.4.3</a>.</p>
+<p class="muted">Screen reader view of <code>p[2]</code>: unchanged by the combined fixes.</p>
+<article class="card" data-outcome="accepted"><h4>ACCEPTED: contrast-inline</h4>
+<p><span class="badge ok">accepted</span><span class="badge review">Verified present, design review</span><span class="badge neutral">deterministic</span><span class="badge review">design review (needs human review)</span></p>
+<p>color:#9a9a9a -&gt; #767676 (2.81:1 -&gt; 4.54:1 on #ffffff)</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+
+<pre role="group" tabindex="0" aria-label="Source diff for color-contrast-2">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -29,7 +29,7 @@</span>
+     &lt;div class=&quot;card&quot;&gt;
+       &lt;img src=&quot;images/jacket.png&quot;&gt;
+       &lt;p class=&quot;price&quot;&gt;Trail jacket, kids $89&lt;/p&gt;
+<span class="del">-      &lt;p class=&quot;note&quot; style=&quot;color:#9a9a9a&quot;&gt;Kids size. Ships in 3 days.&lt;/p&gt;</span>
+<span class="add">+      &lt;p class=&quot;note&quot; style=&quot;color:#767676&quot;&gt;Kids size. Ships in 3 days.&lt;/p&gt;</span>
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;img src=&quot;images/divider.png&quot;&gt;
+</pre></article></div><div class="finding" id="fix-label-2"><h3>label-2: Form elements must have labels</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>label</code>, Form elements must have labels</p>
+<p class="muted">Location: <code>index.html:37:25</code>. Element: <code>&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an implicit (wrapped) &lt;label&gt; Element does not have an explicit &lt;label&gt; aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element has no placeholder attribute Element&#39;s default semantics were not overridde</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces the email field with no name, so the person cannot tell what to type into it.</li><li><strong>Cognitive-access user</strong>, severity 2 of 3 (project rating): Without a programmatic label the purpose of the email field has to be guessed.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html">WCAG 2.2 Understanding page for 1.3.1, 3.3.2, 4.1.2</a>.</p>
+<p><strong>Screen reader view</strong> of <code>input[1]</code> (accessibility tree of that element before and after the combined fixes; <code>-</code> removed, <code>+</code> added):</p><pre role="group" tabindex="0" aria-label="Screen reader view of label-2 (input[1]), before and after the combined fixes"><span class="del">- - textbox</span>
+<span class="add">+ - textbox &quot;Email&quot;</span>
+</pre>
+<article class="card" data-outcome="rejected"><h4>REJECTED: label-associate</h4>
+<p><span class="badge bad">rejected</span><span class="badge neutral">deterministic</span></p>
+<p>id=&quot;email&quot; / for=&quot;email&quot;</p>
+<p>Verdict: <strong>new-incomplete</strong> (the target finding was gone, but the fix is rejected because of what it introduced). The candidate was applied to a scratch copy and re-audited in the browser; it is not part of fixes.patch.</p>
+<p>New findings that the re-audit introduced:</p><ul class="plain"><li><code>duplicate-id-aria</code> at <code>src:index.html#input[1]</code> (fingerprint <code>b1527fc6aa2bde4a</code>)</li></ul>
+
+<pre role="group" tabindex="0" aria-label="Source diff for label-2 (candidate 1 of 2)">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -34,7 +34,7 @@</span>
+   &lt;/div&gt;
+   &lt;img src=&quot;images/divider.png&quot;&gt;
+   &lt;form class=&quot;signup&quot; action=&quot;/signup&quot;&gt;
+<span class="del">-    &lt;label&gt;Email&lt;/label&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</span>
+<span class="add">+    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot;&gt;</span>
+   &lt;/form&gt;
+   &lt;div class=&quot;quantity&quot;&gt;
+     &lt;button class=&quot;step step-down&quot;&gt;-&lt;/button&gt;&lt;button class=&quot;step step-up&quot;&gt;+&lt;/button&gt;
+</pre></article><article class="card" data-outcome="accepted"><h4>ACCEPTED: label-fresh-id</h4>
+<p><span class="badge ok">accepted</span><span class="badge ok">Verified</span><span class="badge neutral">deterministic</span></p>
+<p>id=&quot;email-2&quot; / for=&quot;email-2&quot;</p>
+<p>Verdict: the target finding is gone and no new finding appeared in the re-audit. Included in fixes.patch.</p>
+
+<pre role="group" tabindex="0" aria-label="Source diff for label-2 (candidate 2 of 2)">--- a/index.html
++++ b/index.html
+<span class="hunk">@@ -34,7 +34,7 @@</span>
+   &lt;/div&gt;
+   &lt;img src=&quot;images/divider.png&quot;&gt;
+   &lt;form class=&quot;signup&quot; action=&quot;/signup&quot;&gt;
+<span class="del">-    &lt;label&gt;Email&lt;/label&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</span>
+<span class="add">+    &lt;label for=&quot;email-2&quot;&gt;Email&lt;/label&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email-2&quot;&gt;</span>
+   &lt;/form&gt;
+   &lt;div class=&quot;quantity&quot;&gt;
+     &lt;button class=&quot;step step-down&quot;&gt;-&lt;/button&gt;&lt;button class=&quot;step step-up&quot;&gt;+&lt;/button&gt;
+</pre></article></div></section>
+<section aria-labelledby="h-suggestions"><h2 id="h-suggestions">Suggestions</h2>
+<p>Findings that no fixer can change safely. Each says what a person should do.</p>
+<div class="finding" id="fix-focus-obscured-1"><h3>focus-obscured-1: A focused element must not be entirely hidden by other content</h3>
+<p><span class="badge neutral">moderate</span><span class="badge neutral">needs review</span><code>focus-obscured</code>, A focused element must not be entirely hidden by other content</p>
+<p class="muted">Location: <code>index.html:9:1</code>. Element: <code>&lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;</code></p>
+<p class="muted">Check result: Focused element body &gt; a.skip is fully (5 of 5 points) covered by body &gt; header &gt; div.banner:nth-of-type(2) &gt; h1</p>
+<ul class="plain"><li><strong>Keyboard-only user</strong>, severity 2 of 3 (project rating): The focused the link is hidden behind other content (5 of 5 points covered), so the keyboard user cannot see where they are.</li><li><strong>Low-vision user</strong>, severity 2 of 3 (project rating): A magnified view makes it likelier that a sticky header covers the focused the link.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html">WCAG 2.2 Understanding page for 2.4.11</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: focus-obscured-advice</h4>
+<p><span class="badge neutral">suggestion only</span><code>catalog</code></p>
+<p>Focused body &gt; a.skip is fully (5 of 5 points) covered by body &gt; header &gt; div.banner:nth-of-type(2) &gt; h1; add scroll-margin-top or make the header non-overlapping</p>
+</article></div><div class="finding" id="fix-unreachable-control-1"><h3>unreachable-control-1: Interactive controls must be reachable with the keyboard</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>unreachable-control</code>, Interactive controls must be reachable with the keyboard</p>
+<p class="muted">Location: <code>index.html:27:7</code>. Element: <code>&lt;div class=&quot;btn&quot; onclick=&quot;this.textContent = &#39;Added&#39;&quot;&gt;Add to cart&lt;/div&gt;</code></p>
+<p class="muted">Check result: #main &gt; div.cards:nth-of-type(1) &gt; div.card:nth-of-type(1) &gt; div.btn has a click handler (onclick) but is not focusable and was not reached with Tab</p>
+<ul class="plain"><li><strong>Keyboard-only user</strong>, severity 3 of 3 (project rating): The element (Add to cart) reacts to clicks but cannot be reached with Tab; a keyboard user cannot use it.</li><li><strong>Screen reader user</strong>, severity 2 of 3 (project rating): A screen reader may not announce the element (Add to cart) as a control, so it is easy to miss.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">WCAG 2.2 Understanding page for 2.1.1</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: unreachable-control-advice</h4>
+<p><span class="badge neutral">suggestion only</span><code>catalog</code></p>
+<p>Use &lt;button&gt; instead of &lt;div onclick&gt;; or add tabindex=&quot;0&quot;, role=&quot;button&quot; and a keydown handler for Enter and Space</p>
+</article></div><div class="finding" id="fix-image-alt-4"><h3>image-alt-4: Images must have alternative text</h3>
+<p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>image-alt</code>, Images must have alternative text</p>
+<p class="muted">Location: <code>index.html:35:3</code>. Element: <code>&lt;img src=&quot;images/divider.png&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an alt attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element&#39;s default semantics were not overridden with role=&quot;none&quot; or role=&quot;presentation&quot;</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): A screen reader announces 1 image only as &#39;image&#39; or by file name (divider.png); the product cannot be told apart.</li><li><strong>Low-vision user</strong>, severity 1 of 3 (project rating): Text-only and high-zoom views drop 1 image (divider.png) and leave nothing in their place.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">WCAG 2.2 Understanding page for 1.1.1</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: alt-text-llm</h4>
+<p><span class="badge neutral">suggestion only</span><code>decorative-needs-decision</code></p>
+<p>decorative proposed (alt=&quot;&quot;): visual separator</p>
+<ul class="plain"><li>Model kind: <code>decorative</code></li><li>Proposed value: <code></code></li><li>Model reason: visual separator</li></ul></article></div><div class="finding" id="fix-target-size-1"><h3>target-size-1: All touch targets must be 24px large, or leave sufficient space</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>target-size</code>, All touch targets must be 24px large, or leave sufficient space</p>
+<p class="muted">Location: <code>index.html:40:5</code>. Element: <code>&lt;button class=&quot;step step-down&quot;&gt;-&lt;/button&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Target has insufficient size (16px by 16px, should be at least 24px by 24px) Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px.</p>
+<ul class="plain"><li><strong>Low-vision user</strong>, severity 2 of 3 (project rating): At 16 by 16 px the button is hard to hit for people who magnify the page or have a tremor.</li><li><strong>Keyboard-only user</strong>, severity 1 of 3 (project rating): Switch and assistive pointer users have to aim at the button (16 by 16 px).</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.2 Understanding page for 2.5.8</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: target-size-advice</h4>
+<p><span class="badge neutral">suggestion only</span><code>catalog</code></p>
+<p>Target .step-down is 16 by 16 px; the minimum is 24 by 24 px. Give it min-width: 24px; min-height: 24px (or padding), or keep 24 px of space around it</p>
+</article></div><div class="finding" id="fix-target-size-2"><h3>target-size-2: All touch targets must be 24px large, or leave sufficient space</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">violation</span><code>target-size</code>, All touch targets must be 24px large, or leave sufficient space</p>
+<p class="muted">Location: <code>index.html:40:46</code>. Element: <code>&lt;button class=&quot;step step-up&quot;&gt;+&lt;/button&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Target has insufficient size (16px by 16px, should be at least 24px by 24px) Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 8px instead of at least 24px.</p>
+<ul class="plain"><li><strong>Low-vision user</strong>, severity 2 of 3 (project rating): At 16 by 16 px the button is hard to hit for people who magnify the page or have a tremor.</li><li><strong>Keyboard-only user</strong>, severity 1 of 3 (project rating): Switch and assistive pointer users have to aim at the button (16 by 16 px).</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.2 Understanding page for 2.5.8</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: target-size-advice</h4>
+<p><span class="badge neutral">suggestion only</span><code>catalog</code></p>
+<p>Target .step-up is 16 by 16 px; the minimum is 24 by 24 px. Give it min-width: 24px; min-height: 24px (or padding), or keep 24 px of space around it</p>
+</article></div><div class="finding" id="fix-keyboard-trap-1"><h3>keyboard-trap-1: Keyboard focus must be able to leave every component</h3>
+<p><span class="badge bad">serious</span><span class="badge neutral">needs review</span><code>keyboard-trap</code>, Keyboard focus must be able to leave every component</p>
+<p class="muted">Location: <code>index.html:42:5</code>. Element: <code>&lt;input id=&quot;qty&quot; onkeydown=&quot;if(event.key===&#39;Tab&#39;){event.preventDefault()}&quot;&gt;</code></p>
+<p class="muted">Check result: Focus stayed on #qty for 3 Tabs (possible trap)</p>
+<ul class="plain"><li><strong>Screen reader user</strong>, severity 3 of 3 (project rating): Once focus enters the text field a screen reader user cannot leave it with the keyboard.</li><li><strong>Keyboard-only user</strong>, severity 3 of 3 (project rating): Tab stays on the text field (heuristic: focus did not move for 3 Tabs); the rest of the page cannot be reached.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html">WCAG 2.2 Understanding page for 2.1.2</a>.</p>
+
+<article class="card" data-outcome="suggest-only"><h4>SUGGESTION: keyboard-trap-advice</h4>
+<p><span class="badge neutral">suggestion only</span><code>catalog</code></p>
+<p>Focus stayed on #qty for 3 Tabs; keydown handlers that cancel Tab must let it through or provide an exit (Esc)</p>
+</article></div></section>
+<section aria-labelledby="h-review"><h2 id="h-review">Needs review (not fixed)</h2>
+<p>axe could not decide these items automatically. They are listed for a person to check; no fix was tried.</p>
+<ul class="plain"><li id="review-color-contrast-1"><strong>color-contrast-1</strong> (<code>color-contrast</code>, serious), <code>index.html:19:5</code>: Elements must meet minimum color contrast ratio thresholds. <code>&lt;h1&gt;Orbit Outfitters&lt;/h1&gt;</code> <ul class="plain"><li><strong>Low-vision user</strong>, severity 2 of 3 (project rating): The text (Orbit Outfitters) has a contrast ratio of 0:1, below the required minimum, so it fades out for low-vision readers.</li><li><strong>Cognitive-access user</strong>, severity 1 of 3 (project rating): Faint text (Orbit Outfitters) is harder to read for people with dyslexia or attention difficulties.</li></ul><p class="muted">Basis: <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">WCAG 2.2 Understanding page for 1.4.3</a>.</p></li></ul></section>
+<section aria-labelledby="h-unmapped"><h2 id="h-unmapped">Unmapped</h2>
+<p>These findings exist in the live page but could not be tied to one element in the source (for example an element added by a script), so no patch was built. A build that renders templates can opt in by adding <code>data-a11y-source="&lt;file&gt;:&lt;line&gt;:&lt;column&gt;"</code> to the start tag, giving the position of its opening angle bracket in the source.</p>
+<div class="finding" id="unmapped-label-3"><h3>label-3: Form elements must have labels</h3><p><span class="badge bad">critical</span><span class="badge neutral">violation</span><code>label</code>, Form elements must have labels</p>
+<p class="muted">Location: <code>not mapped to the source (no-candidate)</code>. Element: <code>&lt;input id=&quot;email&quot; type=&quot;email&quot;&gt;</code></p>
+<p class="muted">Check result: Fix any of the following: Element does not have an implicit (wrapped) &lt;label&gt; Element does not have an explicit &lt;label&gt; aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element has no title attribute Element has no placeholder attribute Element&#39;s default semantics were not overridde</p><article class="card" data-outcome="unmapped"><h4>UNMAPPED</h4>
+<p><span class="badge neutral">no patch</span><code>no-candidate</code></p>
+<p>This finding could not be tied to one place in the source, so no patch was built.</p></article></div></section>
+<section aria-labelledby="h-keyboard"><h2 id="h-keyboard">Keyboard trace</h2>
+<details><summary>Tab order walked by the audit (11 steps, stopped because: trap)</summary>
+<table><caption>Focus order. Covered points: how many of 5 sampled points of the focused element showed another element.</caption>
+<thead><tr><th scope="col">Step</th><th scope="col">Element</th><th scope="col">Covered points</th><th scope="col">Covered by</th><th scope="col">Host</th></tr></thead>
+<tbody><tr><td>0</td><td><code>body &gt; a.skip</code></td><td>5 of 5</td><td>body &gt; header &gt; div.banner:nth-of-type(2) &gt; h1</td><td>plain</td></tr><tr><td>1</td><td><code>body &gt; header &gt; div.bar:nth-of-type(1) &gt; a.logo:nth-of-type(1)</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>2</td><td><code>body &gt; header &gt; div.bar:nth-of-type(1) &gt; a.promo:nth-of-type(2)</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>3</td><td><code>body &gt; header &gt; div.bar:nth-of-type(1) &gt; input</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>4</td><td><code>body &gt; header &gt; div.bar:nth-of-type(1) &gt; button.cart</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>5</td><td><code>#main &gt; form.signup &gt; input</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>6</td><td><code>#main &gt; div.quantity:nth-of-type(2) &gt; button.step.step-down:nth-of-type(1)</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>7</td><td><code>#main &gt; div.quantity:nth-of-type(2) &gt; button.step.step-up:nth-of-type(2)</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>8</td><td><code>#qty</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>9</td><td><code>#qty</code></td><td>0 of 5</td><td></td><td>plain</td></tr><tr><td>10</td><td><code>#qty</code></td><td>0 of 5</td><td></td><td>plain</td></tr></tbody></table>
+<table><caption>Elements that look interactive without being native controls</caption>
+<thead><tr><th scope="col">Element</th><th scope="col">Why it looks interactive</th><th scope="col">Focusable</th><th scope="col">Reached by Tab</th></tr></thead>
+<tbody><tr><td><code>#main &gt; div.cards:nth-of-type(1) &gt; div.card:nth-of-type(1) &gt; div.btn</code></td><td>onclick</td><td>no</td><td>no</td></tr></tbody></table>
+</details></section>
+<section aria-labelledby="h-method"><h2 id="h-method">Methodology</h2>
+<ul class="plain">
+<li>Engine: axe-core 4.14.0 with the tags wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22a, wcag22aa, plus three keyboard checks run in a real Chromium.</li>
+<li>Deterministic: the audit, the source mapping, the edits, the bounds check, the acceptance gate (fingerprints before and after), the combine and every output file.</li>
+<li>LLM: the fake provider (10 call(s), prompt v1) proposes a value only (alternative text or a control name). It never writes a diff, runs a gate or decides. Every such value is marked for human review.</li>
+<li>Heuristic: the keyboard checks. A trap or an obscured focus is reported as needs review, not as a failure.</li>
+<li>Persona severities are a project rating from 0 to 3 taken from a fixed catalog, not a measurement. Each card links the WCAG 2.2 Understanding page that names who benefits.</li>
+<li>Contrast fixes change the HSL lightness of one colour in an inline style until the ratio is met. They keep hue and saturation but do not know the design, so they are always marked for design review.</li>
+<li>Verified means: re-audited in a real browser; the target failure is gone and no new axe or keyboard finding (violation or needs-review) appeared. It does not see layout, script errors or meaning; LLM-written text is marked for human review.</li>
+</ul></section>
+<section aria-labelledby="h-standards"><h2 id="h-standards">Standards note</h2>
+<ul class="plain">
+<li>This tool helps find and fix common WCAG 2.2 AA failures. It is not a conformance audit and not legal advice.</li>
+<li>These are failures detected by automated checks; real barriers are more numerous.</li>
+<li>WCAG 2.2 is a W3C Recommendation (first published 5 October 2023). 4.1.1 Parsing was removed. Of the new AA criteria, this tool checks 2.5.8 Target Size via axe and approximates 2.4.11 Focus Not Obscured with a heuristic; it does not check 2.5.7, 3.2.6, 3.3.7 or 3.3.8. See <a href="https://www.w3.org/TR/WCAG22/">the WCAG 2.2 Recommendation</a>.</li>
+</ul></section>
+</main>
+<footer>
+<p>Generated by a11y-fixgate 0.1.0. Every value on this page is escaped and the page carries no script.</p>
+</footer>
+</body>
+</html>

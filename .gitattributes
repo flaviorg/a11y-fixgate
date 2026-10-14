@@ -1,0 +1,2 @@
+# Byte-exact fixture: CRLF line endings and a UTF-8 BOM are what the test checks.
+tests/fixtures/html/crlf-bom.html -text

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "scenario": "missing-key",
+  "promptHashes": {
+    "alt-text.v1": "sha256:d70e5e3e5040b6c56c0bb63cafca26bc20633bbd16a8c09ba2884797cc7861e2",
+    "control-name.v1": "sha256:0b38c658a3c3a34070d06d1bfd2279b672a14dadb1c1bc4a3884684577562f1d"
+  },
+  "responses": []
+}

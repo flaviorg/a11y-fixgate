@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Isolation page</title>
+<link rel="stylesheet" href="https://example.com/x.css">
+</head>
+<body>
+<main>
+  <h1>Isolation page</h1>
+  <p>The stylesheet, the image and the WebSocket below all point outside the server origin.</p>
+  <img src="http://127.0.0.1:__OTHER_PORT__/pixel.png" alt="">
+  <script>
+    try { new WebSocket("ws://127.0.0.1:__OTHER_PORT__/socket"); } catch (error) { /* blocked */ }
+  </script>
+</main>
+</body>
+</html>

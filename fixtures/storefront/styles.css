@@ -1,0 +1,81 @@
+/* Explicit pixel sizes everywhere so recordings agree across machines (spec 5.15). */
+* { box-sizing: border-box; }
+html { background: #ffffff; }
+body {
+  margin: 0;
+  padding-top: 196px; /* the fixed header is 188 px tall */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+  background: #ffffff;
+}
+a { color: #1d3557; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 188px;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d0d0;
+}
+.bar { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 16px; }
+.banner { display: flex; align-items: center; gap: 16px; height: 128px; padding: 4px 16px; }
+.banner img { display: block; width: 480px; height: 120px; }
+
+/* Under the fixed header: the skip link stays covered at all 5 sample points. */
+.skip {
+  position: absolute;
+  top: 70px;
+  left: 900px;
+  z-index: 1;
+  display: inline-block;
+  height: 32px;
+  padding: 6px 8px;
+}
+
+.logo, .promo { display: inline-block; height: 32px; min-width: 32px; padding: 4px; line-height: 24px; }
+.promo { padding: 6px 8px; line-height: 20px; }
+
+input { height: 32px; width: 200px; padding: 4px 8px; font-size: 16px; border: 1px solid #555555; color: #222222; background: #ffffff; }
+button { height: 40px; min-width: 40px; padding: 0 12px; font-size: 16px; border: 1px solid #555555; color: #222222; background: #ffffff; }
+.cart { width: 40px; padding: 7px; }
+
+h1 {
+  margin: 0;
+  height: 120px;
+  width: 480px;
+  padding: 40px 16px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+  background-image: url("images/hero.png");
+}
+
+main { padding: 0 16px; }
+.cards { display: flex; gap: 24px; }
+.card { width: 260px; }
+.card img { display: block; width: 160px; height: 160px; }
+.card p { margin: 4px 0; }
+.btn {
+  display: inline-block;
+  height: 40px;
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #1a5e2f;
+  cursor: pointer;
+}
+main > img { display: block; width: 640px; height: 8px; margin: 12px 0; }
+
+.signup { display: flex; align-items: center; gap: 8px; height: 40px; margin: 0 0 12px; }
+.quantity { display: flex; align-items: center; gap: 0; height: 40px; }
+.quantity label { margin: 0 8px 0 16px; }
+.quantity input { width: 64px; }
+.step { width: 16px; height: 16px; min-width: 16px; padding: 0; font-size: 12px; line-height: 12px; }
+
+footer { margin-top: 16px; padding: 8px 16px; border-top: 1px solid #d0d0d0; }
+footer p { margin: 0 0 8px; }
+.newsletter { display: flex; align-items: center; gap: 8px; }

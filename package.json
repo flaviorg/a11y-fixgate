@@ -1,0 +1,38 @@
+{
+  "name": "a11y-fixgate",
+  "version": "0.1.0",
+  "description": "An LLM-assisted accessibility fixer with a deterministic verification loop",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.21"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import ./tests/setup/no-network.ts --test \"tests/unit/**/*.test.ts\" \"tests/repo/**/*.test.ts\" \"tests/e2e/**/*.test.ts\"",
+    "test:unit": "node --import ./tests/setup/no-network.ts --test \"tests/unit/**/*.test.ts\" \"tests/repo/**/*.test.ts\"",
+    "test:e2e": "node --import ./tests/setup/no-network.ts --test \"tests/e2e/**/*.test.ts\"",
+    "test:coverage": "node --import ./tests/setup/no-network.ts --test --experimental-test-coverage --test-coverage-include=\"src/**\" \"tests/unit/**/*.test.ts\" \"tests/repo/**/*.test.ts\" \"tests/e2e/**/*.test.ts\"",
+    "test:live": "node --env-file-if-exists=.env --test \"tests/live/**/*.live.ts\"",
+    "audit": "node --env-file-if-exists=.env src/cli.ts audit",
+    "demo": "node scripts/demo.ts",
+    "fixtures:record": "node scripts/record-audits.ts",
+    "fixtures:rekey": "node scripts/rekey-fixtures.ts",
+    "check:secrets": "node scripts/check-secrets.ts",
+    "setup:hooks": "git config core.hooksPath .githooks",
+    "browser:install": "playwright-core install --with-deps chromium",
+    "verify": "npm run typecheck && npm test && npm run check:secrets && npm run demo"
+  },
+  "dependencies": {
+    "axe-core": "4.14.0",
+    "diff": "9.0.0",
+    "parse5": "8.0.1",
+    "playwright-core": "1.64.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "typescript": "7.0.2"
+  }
+}
